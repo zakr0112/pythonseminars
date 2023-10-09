@@ -1,5 +1,5 @@
 # python
-This repository hosts all of my python projects created in university
+This is the working repository for seminar programming sessions in 'Computer Science' in LBU
 
-Files currently in the repository:
+Current working files:
 - test.py
