@@ -36,7 +36,6 @@ print("John" < "Terry")
 print()
 
 #Marks Calculation
-
 """
 Five exams - five different marks
 - Collect all marks in variables
@@ -48,23 +47,23 @@ exam3 = 101
 exam4 = 101
 exam5 = 101
 
-while exam1 >100 and exam1:
+while exam1 > 100 and exam1:
   exam1 = int(input("Enter mark 1: "))
 
-while exam2 >100:
+while exam2 > 100:
   exam2 = int(input("Enter mark 2: "))
 
-while exam3 >100:
+while exam3 > 100:
   exam3 = int(input("Enter mark 3: "))
 
-while exam4 >100:
+while exam4 > 100:
   exam4 = int(input("Enter mark 4: "))
 
-while exam5 >100:
+while exam5 > 100:
   exam5 = int(input("Enter mark 5: "))
 
 print()
-exams = [ exam1, exam2, exam3, exam4, exam5]
+exams = [exam1, exam2, exam3, exam4, exam5]
 
 print(exams)
 
@@ -78,4 +77,4 @@ print("Mean:", np.mean(exams))
 
 print("Original :" + str(exams))
 res = statistics.pstdev(exams)
-print("Standard Deviation: " +str(res))
+print("Standard Deviation: " + str(res))
