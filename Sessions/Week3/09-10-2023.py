@@ -1,6 +1,7 @@
 #imports
 import time
 import numpy as np
+import statistics
 
 #Variable recap
 
@@ -37,22 +38,33 @@ print()
 #Marks Calculation
 
 """
-Five emams - five different marks
+Five exams - five different marks
 - Collect all marks in variables
 """
 
+exam1 = 101
+exam2 = 101
+exam3 = 101
+exam4 = 101
+exam5 = 101
 
-exam1 = int(input("Enter mark 1: "))
+while exam1 >100 and exam1:
+  exam1 = int(input("Enter mark 1: "))
 
-exam2 = int(input("Enter mark 2: "))
+while exam2 >100:
+  exam2 = int(input("Enter mark 2: "))
 
-exam3 = int(input("Enter mark 3: "))
+while exam3 >100:
+  exam3 = int(input("Enter mark 3: "))
 
-exam4 = int(input("Enter mark 4: "))
+while exam4 >100:
+  exam4 = int(input("Enter mark 4: "))
 
-exam5 = int(input("Enter mark 5: "))
+while exam5 >100:
+  exam5 = int(input("Enter mark 5: "))
 
-exams = [exam1, exam2, exam3, exam4, exam5]
+print()
+exams = [ exam1, exam2, exam3, exam4, exam5]
 
 print(exams)
 
@@ -62,4 +74,8 @@ print("Highest:", highest)
 lowest = min(exams)
 print("Lowest: ", lowest)
 
-print("Mean :", np.mean(exams))
+print("Mean:", np.mean(exams))
+
+print("Original :" + str(exams))
+res = statistics.pstdev(exams)
+print("Standard Deviation: " +str(res))
