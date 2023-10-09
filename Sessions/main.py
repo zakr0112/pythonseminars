@@ -13,6 +13,3 @@ print(order)
 knights = []
 knights.append('Zak')
 print(knights)
-
-#Builtin
-#Max - Min
