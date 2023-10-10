@@ -78,3 +78,7 @@ print("Mean:", np.mean(exams))
 print("Original :" + str(exams))
 res = statistics.pstdev(exams)
 print("Standard Deviation: " + str(res))
+
+
+def test():
+  print("Function test")
