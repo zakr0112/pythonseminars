@@ -1,4 +1,4 @@
-# Practical 2
+# Practical 2 - Password Entry Program
 def passwordentry():
   password1 = input("Enter password: ")
   password2 = input("Re-enter password: ")

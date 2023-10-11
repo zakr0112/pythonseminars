@@ -1,1 +1,1 @@
-# Practical 3
+# Practical 3 - Times Table Program
