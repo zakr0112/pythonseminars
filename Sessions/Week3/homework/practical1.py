@@ -1,4 +1,4 @@
-# Practical 1
+# Practical 1 - Greetings Program
 print()
 name = input("Enter name: ")
 if name == "":
