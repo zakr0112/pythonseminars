@@ -13,6 +13,7 @@ while userentry < 0 or userentry > 12:
 calculation = userentry * 7
 print()
 print(userentry, "- 12 x 7")
+print()
 print(f"{userentry} x 7 = {calculation}")
 while userentry < 12:
   userentry += 1
