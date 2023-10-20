@@ -1,7 +1,7 @@
 modules = ["python-3.10:v18-20230807-322e88b"]
 
 hidden = [".pythonlibs"]
-run = "python Sessions/Week4/homework/practical1.py"
+run = "python Sessions/Week4/homework/practical3.py"
 
 [nix]
 channel = "stable-23_05"
