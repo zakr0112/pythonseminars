@@ -1,0 +1,1 @@
+# Practical 6 - Centigrade temp into fahrenheit, and the reverse
