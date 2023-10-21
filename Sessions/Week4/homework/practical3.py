@@ -7,9 +7,11 @@ arTHur the name should be displayed as Arthur.
 """
 
 print()
+
 name = input("Enter name: ")
 if name == "":
   print("Hello stranger")
 else:
+  name = name.capitalize()
   print("Hello", name)
 
