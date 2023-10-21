@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "python-seminars"
 version = "0.1.0"
-description = ""
+description = "Used to store seminar work"
 authors = ["Zak Richards Z.Richards9969@student.leedsbeckett.ac.uk"]
 
 [tool.poetry.dependencies]
