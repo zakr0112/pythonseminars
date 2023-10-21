@@ -7,3 +7,9 @@ characters, return it unchanged.)
 """
 
 print()
+def characterRemove():
+  userInput = input("Enter a string: ")
+  charRemoved = userInput[-1]
+  print("Last character:", charRemoved)
+
+characterRemove()
