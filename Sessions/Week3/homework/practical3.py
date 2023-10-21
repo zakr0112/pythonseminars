@@ -1,6 +1,6 @@
 # Practical 3 - Times Table Program
 print()
-print("Welcome to the Times Table Program")
+print("Welcome to the new Times Table Program")
 for i in range(0, 13):
   print(f"7 x {i} = {7 * i}")
   print()
