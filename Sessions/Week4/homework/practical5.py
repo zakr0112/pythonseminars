@@ -32,7 +32,7 @@ def centToFah():
   celcius = int(input("Enter temperature: "))
   print()
   fahrenheit = (1.8* celcius) + 32
-  print("Centigrade:", celcius)
+  print("Centigrade:", celcius, "C")
   print("Fahrenheit:", fahrenheit)
   time.sleep(5)
   choice()
@@ -46,7 +46,7 @@ def fahToCent():
   print()
   celcius = (fahrenheit - 32)*5/9
   print("Fahrenheit:", fahrenheit)
-  print("Centigrade:", celcius)
+  print("Centigrade:", celcius, "C")
   time.sleep(5)
   choice()
 
