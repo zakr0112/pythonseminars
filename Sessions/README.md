@@ -1,2 +1,3 @@
 # Sessions
-These directories store any labwork and off-campus work
+These directories are used to store any work done in lab sessions, and any work that has been 
+completed at home
