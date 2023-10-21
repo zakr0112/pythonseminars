@@ -1,1 +1,0 @@
-# Practical 7 - 6 Temps display max min and mean
