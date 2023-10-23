@@ -13,4 +13,4 @@ from http import HTTPStatus
 print()
 url = str(sys.argv[1])
 response = requests.get(url)
-print(response.status_code)
+print("Response Code:", response.status_code)
