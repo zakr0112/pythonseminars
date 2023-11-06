@@ -11,3 +11,5 @@ clarity the random letters are not random:
 send cheese
 s e n d c h e e s e
 """
+
+print()
