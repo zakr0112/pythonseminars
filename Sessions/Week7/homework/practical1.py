@@ -6,3 +6,9 @@ returned should be ['c', 'e', 'h', 's'].
 """
 
 print()
+
+
+
+String = input("Enter string: ")
+StringList = [String]
+print(StringList)
