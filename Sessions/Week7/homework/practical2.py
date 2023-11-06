@@ -17,3 +17,6 @@ functionInput2 = input("Enter word 2: ")
 
 functionOrder = sorted(functionInput)
 print(functionOrder)
+
+
+#do later

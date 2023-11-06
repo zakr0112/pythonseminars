@@ -14,3 +14,7 @@ best to ignore that initially, and then check the usual resources for the runes.
 """
 
 print()
+
+
+
+#do later
