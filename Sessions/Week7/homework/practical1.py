@@ -10,5 +10,5 @@ print()
 
 
 String = input("Enter string: ")
-StringList = [String]
-print(StringList)
+StringList = [*String]
+print("Unsorted:", StringList)
