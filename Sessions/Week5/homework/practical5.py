@@ -5,3 +5,13 @@ entered by the user and displayed the maximum, minimum, and mean. Create a
 version of that program that takes the values from the command-line instead. Be
 sure to handle the case where no arguments are provided!
 """
+
+import sys
+import statistics
+
+number = len(sys.argv)
+parsed = number - 1
+print("Arguments passed", parsed)
+
+
+#I HAVE NO IDEA HOW TO DO THIS IN ANY CAPACITY
