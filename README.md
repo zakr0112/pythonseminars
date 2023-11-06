@@ -3,6 +3,12 @@ This is the working repository for seminar programming sessions in 'Computer Sci
 
 
 Current Working Directories:
+- Week 1
+    - Homework
+    - Lab Session
+- Week 2
+    - Homework
+    - Lab Session
 - Week 3
     - Homework
     - Lab Session
