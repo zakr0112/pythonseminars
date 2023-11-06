@@ -1,5 +1,5 @@
 # Python Projects
-This is the working repository for seminar programming sessions in 'Computer Science' in LBU
+This is the working repository for seminar programming sessions in 'Computer Science' at LBU
 
 
 Current Working Directories:
@@ -22,6 +22,9 @@ Current Working Directories:
     - Homework
     - Lab Session
 - Week 7
+    - Homework
+    - Lab Session
+- Week 8 (Not Commenced Yet)
     - Homework
     - Lab Session
  
