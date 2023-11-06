@@ -5,4 +5,8 @@ factors of that integer. (A factor is an integer which can be multiplied by anot
 """
 
 print()
-IntInput = int(input("Enter Integar: "))
+
+Integar = int(input("Enter Integar: "))
+for i in range(1,Integar+1):
+  if not Integar%i:
+    print(i,end=' ')
