@@ -4,3 +4,11 @@ Write and test a function that determines if a given integer is a prime number. 
 prime number is an integer greater than 1 that cannot be produced by multiplying
 two other integers.
 """
+
+print()
+
+IntIntegar = int(input("Enter Integar: "))
+
+if IntIntegar > 1:
+  for i in range(2, int(IntIntegar/2)+1):
+    if (IntIntegar % i) == 0:
