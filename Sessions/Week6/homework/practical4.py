@@ -14,3 +14,10 @@ def remove_space(message):
   return message.replace(" ", "")
 
 print("Part 1:", remove_space(message))
+
+message2 = remove_space(message)
+
+def reverse_text(message2):
+  return message2[::-1]
+
+print("Part 2:", reverse_text(message2))
