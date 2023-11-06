@@ -12,6 +12,12 @@ Current Working Directories:
 - Week 5
    - Homework
    - Lab Session
+- Week 6
+   - Homework
+   - Lab Session
+- Week 7
+   - Homework
+   - Lab Session
  
 
 Uni Email: Z.Richards9969@student.leedsbeckett.ac.uk
