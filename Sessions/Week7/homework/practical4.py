@@ -11,7 +11,6 @@ not matter, so "E" and "e" are considered the same.
 Hint: There are many ways to do this. It is obviously a dictionary, but we will want
 zero counts, so some initialisation is needed. Also, sorting dictionaries is tricky, so
 best to ignore that initially, and then check the usual resources for the runes.
-
 """
 
 print()
