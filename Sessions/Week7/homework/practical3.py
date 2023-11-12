@@ -59,6 +59,15 @@ def entry():
       time.sleep(1)
       print()
       entry()
+    elif countryentry is not countries:
+      print("Whoops that's not in our list!")
+      newcountry = input("Re-enter the city: ")
+      newcity = input("Enter its capital city: ")
+      countries.append(newcountry)
+      capital_cities.append(newcity)
+      time.sleep(1)
+      print()
+      entry()
 
 
 #run program
