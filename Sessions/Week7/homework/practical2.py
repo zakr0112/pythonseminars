@@ -27,7 +27,3 @@ wordtwo = input("Enter word 2: ")
 print("Letters in either word:", eitherword(wordone, wordtwo))
 print("Letters in both words:", bothwords(wordone, wordtwo))
 print("Letters in either, but not both:", eitherbutnotbothwords(wordone, wordtwo))
-
-
-
-#do later
