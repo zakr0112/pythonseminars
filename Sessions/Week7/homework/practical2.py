@@ -12,11 +12,22 @@ have been discussing this week! Each function can be exactly one line.
 
 print()
 
-functionInput = input("Enter word 1: ")
-functionInput2 = input("Enter word 2: ")
+def eitherword(word1, word2):
+  return sorted(set(word1) | set(word2))
 
-functionOrder = sorted(functionInput)
-print(functionOrder)
+def bothwords(word1, word2):
+  return sorted(set(word1) & set(word2))
+
+def eitherbutnotbothwords(word1, word2):
+  return sorted((set(word1) | set(word2)) - (set(word1) & set(word2)))
+
+wordone = input("Enter word 1: ")
+wordtwo = input("Enter word 2: ")
+
+print("Letters in either word:", eitherword(wordone, wordtwo))
+print("Letters in both words:", bothwords(wordone, wordtwo))
+print("Letters in either, but not both:", eitherbutnotbothwords(wordone, wordtwo))
+
 
 
 #do later
