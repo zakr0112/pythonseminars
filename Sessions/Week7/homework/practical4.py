@@ -16,7 +16,9 @@ best to ignore that initially, and then check the usual resources for the runes.
 
 print()
 
-print("Enter a message and we will report the six most common letters, and how many times they appear!")
-message = input("Enter your message")
-
-#do later
+print("Enter a message we will report the following:")
+print("- Six Most common letters")
+print("- How many times they appear")
+print()
+message = input("Enter Message: ")
+print()
