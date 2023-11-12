@@ -28,30 +28,33 @@ def capital(country):
 
 def entry():
   while True:
+    print()
+    print("Current Known Countries:", countries)
+    print();print()
     countryentry = input("Enter a country (or type exit): ")
     if countryentry == "exit":
       quit()
-    elif countryentry == {countries[0]}:
+    elif countryentry == "England":
       print(f"The capital of {countryentry} is {capital_cities[0]}.")
       time.sleep(1)
       print()
       entry()
-    elif countryentry == {countries[1]}:
+    elif countryentry == "Scotland":
       print(f"The capital of {countryentry} is {capital_cities[1]}.")
       time.sleep(1)
       print()
       entry()
-    elif countryentry == {countries[2]}:
+    elif countryentry == "America":
       print(f"The capital of {countryentry} is {capital_cities[2]}.")
       time.sleep(1)
       print()
       entry()
-    elif countryentry == {countries[3]}:
+    elif countryentry == "Italy":
       print(f"The capital of {countryentry} is {capital_cities[3]}.")
       time.sleep(1)
       print()
       entry()
-    elif countryentry == {countries[4]}:
+    elif countryentry == "Germany":
       print(f"The capital of {countryentry} is {capital_cities[4]}.")
       time.sleep(1)
       print()
