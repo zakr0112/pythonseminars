@@ -23,7 +23,14 @@ def capital(country):
 
 
 def entry():
+  while True:
+    countryentry = input("Enter a country (or type exit): ")
+    if countryentry == "exit":
+      quit()
+    elif countryentry == "England":
+      print(f"The capital of {countryentry} is {capital_cities[0]}.")
+    
 
 
 #run program
- entry()
+entry()
