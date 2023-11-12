@@ -15,5 +15,15 @@ print()
 countries = ['England', 'Scotland', 'America', 'Italy', 'Germany']
 capital_cities = ['London', 'Edinburgh', 'Washington DC', 'Rome', 'Berlin']
 
-CountryEntry = input("Enter a country: ")
-if CountryEntry == 
+def capital(country):
+  for i in range(len(countries)):
+      if countries[i].lower() == country.lower():
+          return capital_cities[i]
+  return "Unknown"
+
+
+def entry():
+
+
+#run program
+ entry()
