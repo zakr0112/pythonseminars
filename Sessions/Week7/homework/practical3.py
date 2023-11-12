@@ -12,5 +12,8 @@ variously as, for example, "Wales", "wales", "WALES" and so on
 print()
 
 
-Countries = ['England', 'Scotland', 'America', 'Italy', 'Germany']
-CapitalCities = ['London', 'Edinburgh', 'Washington DC', 'Rome', 'Berlin']
+countries = ['England', 'Scotland', 'America', 'Italy', 'Germany']
+capital_cities = ['London', 'Edinburgh', 'Washington DC', 'Rome', 'Berlin']
+
+CountryEntry = input("Enter a country: ")
+if CountryEntry == 
