@@ -16,8 +16,10 @@ best to ignore that initially, and then check the usual resources for the runes.
 
 import collections
 from collections import Counter
+import string
 
 print()
+
 
 print("Enter a message we will report the following:")
 print("- Six Most common letters")
@@ -25,3 +27,13 @@ print("- How many times they appear")
 print()
 message = input("Enter Message: ")
 print()
+
+message = message.lower()
+message = ''.join(char for char in message if char.isalpha())
+lettercount = Counter(message)
+mostcommon = lettercount.most_common(6)
+print()
+for letter, count in mostcommon:
+  print(f"{letter}: {count}")
+
+
