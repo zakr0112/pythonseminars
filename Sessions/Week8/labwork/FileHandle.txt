@@ -1,5 +1,3 @@
-This is an information source document to be opened during the file handling test
-
 This is a text file
 It contains multiple lines of text
 This is the final line within the file

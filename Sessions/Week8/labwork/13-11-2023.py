@@ -3,12 +3,13 @@
 #imports
 import math
 import time
+import os
 
 
 #global variables
 name = "Zak"
 addr = "LS28AR"
-age = "18"
+age = 18
 
 def choiceone():
   #Format f Strings / Specifiers
@@ -57,7 +58,22 @@ def choicethree():
 
 def choicefour():
   #File Handling
-  print("File Handlings")
+  print("File Handling")
+  print()
+  cwd = os.getcwd()
+  files = os.listdir(cwd)
+  print("Current Working Directory %r" % (cwd))
+  print()
+  f = open("./Sessions/Week8/labwork/FileHandle.txt")
+  file_contents = f.read()
+  print(file_contents)
+  for line in f:
+    print(line)
+  f.close()
+
+
+  time.sleep(3)
+  menu()
 
 
 
@@ -78,8 +94,10 @@ def menu():
     print()
     choicethree()
   elif choice == "4":
+    print()
     choicefour()
   else:
+    print()
     print("Wrong Selection")
     menu()
 
