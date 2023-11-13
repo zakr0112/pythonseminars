@@ -8,6 +8,7 @@ import time
 #global variables
 name = "Zak"
 addr = "LS28AR"
+age = "18"
 
 def choiceone():
   #Format f Strings / Specifiers
@@ -41,12 +42,31 @@ def choicetwo():
   print("The cost of '{:^11}' was £{:8.2f}".format(item,cost))
   print(f"{name:@^15} - {age:#^10}")
   time.sleep(3)
+  menu()
+
+
+def choicethree():
+  #Alternative Formatting Approaches
+  print("Alternative Formatting Approaches")
+  print("Name is %s, and age is %.2f" % (name, age))
+  print(name.rjust(15), " - ", str(age).center(10))
+  print(f"{name:>15} - {age:^10}")
+  time.sleep(3)
+  menu()
+
+
+def choicefour():
+  #File Handling
+  print("File Handlings")
 
 
 
 def menu():
+  print()
   print("(1): Format f Strings / Specifiers")
   print("(2): Formatting str.format()")
+  print("(3): Alternative Formatting Approaches")
+  print("(4): File Handling")
   choice = input("Enter your choice: ")
   if choice == "1":
     print()
@@ -54,6 +74,14 @@ def menu():
   elif choice == "2":
     print()
     choicetwo()
+  elif choice == "3":
+    print()
+    choicethree()
+  elif choice == "4":
+    choicefour()
+  else:
+    print("Wrong Selection")
+    menu()
 
 
 #start
