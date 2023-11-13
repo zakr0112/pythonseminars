@@ -101,6 +101,7 @@ def choicefour():
 
 def menu():
   print()
+  print("13/11/2023 Practical Session Menu")
   print("(1): Format f Strings / Specifiers")
   print("(2): Formatting str.format()")
   print("(3): Alternative Formatting Approaches")
