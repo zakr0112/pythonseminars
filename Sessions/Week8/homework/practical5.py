@@ -1,4 +1,4 @@
-#Practical 5 - Unix spell
+#Practical 5 - Unix spell-checker (CLA Implementation)
 """
 The Unix spell command is a simple spell-checker. It prints out all the words in a
 text file that are not found in a dictionary. Write and test an implementation of this,

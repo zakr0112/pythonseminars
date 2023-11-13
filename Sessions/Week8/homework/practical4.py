@@ -1,4 +1,4 @@
-#Practical 4 - Unix wc
+#Practical 4 - Unix wc command (CLA Implementation)
 """
 The Unix wc command counts the number of lines, words, and characters in a file.
 Write an implementation of this that takes a file name as a command-line

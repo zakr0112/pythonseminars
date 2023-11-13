@@ -1,4 +1,4 @@
-#Practical 3 - Unix grep
+#Practical 3 - Unix grep command (CLA Implementation)
 """
 The Unix grep command searches a file and outputs the lines in the file that
 contain a certain pattern. Write an implementation of this. It will take two

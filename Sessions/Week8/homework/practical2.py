@@ -1,4 +1,4 @@
-#Practical 2 - Unix diff
+#Practical 2 - Unix diff command / Comparability of files (CLA Implementation)
 """
 The Unix diff command compares two files and reports the differences, if any.
 Write a simple implementation of this that takes two file names as command-line
