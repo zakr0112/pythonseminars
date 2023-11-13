@@ -70,6 +70,9 @@ def choicefour():
   for line in f:
     print(line)
   f.close()
+  
+  print()
+  f1 = open("./Sessions/Week8/labwork/FileHandle.txt", "w")
 
 
   time.sleep(3)
