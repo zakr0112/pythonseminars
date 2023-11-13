@@ -1,0 +1,1 @@
+This is an information source document to be opened during the file handling test
