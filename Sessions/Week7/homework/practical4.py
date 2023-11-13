@@ -14,6 +14,9 @@ zero counts, so some initialisation is needed. Also, sorting dictionaries is tri
 best to ignore that initially, and then check the usual resources for the runes.
 """
 
+import collections
+from collections import Counter
+
 print()
 
 print("Enter a message we will report the following:")
