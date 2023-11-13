@@ -24,7 +24,7 @@ Current Working Directories:
 - Week 7
     - Homework
     - Lab Session
-- Week 8 (Not Commenced Yet)
+- Week 8
     - Homework
     - Lab Session
  
