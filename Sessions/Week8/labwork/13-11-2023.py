@@ -64,15 +64,34 @@ def choicefour():
   files = os.listdir(cwd)
   print("Current Working Directory %r" % (cwd))
   print()
+  print("FileHandle.txt Output: ")
+  print()
   f = open("./Sessions/Week8/labwork/FileHandle.txt")
   file_contents = f.read()
   print(file_contents)
   for line in f:
     print(line)
   f.close()
+  print()
   
   print()
-  f1 = open("./Sessions/Week8/labwork/FileHandle.txt", "w")
+  print("TextEdit.txt:")
+  print("Current Contents: ")
+  print()
+  f1 = open("./Sessions/Week8/labwork/TextEdit.txt")
+  file_contents = f1.read()
+  
+  print(file_contents)
+  for line in f1:
+    print(line)
+  f1.close()
+  print()
+  f2 = open("./Sessions/Week8/labwork/TextEdit.txt", "w")
+  writeToFile = input("Enter your text to write to file: ")
+  f2.write(writeToFile)
+  f2.close()
+  print()
+  print(writeToFile, "written to TextEdit.txt")
 
 
   time.sleep(3)
