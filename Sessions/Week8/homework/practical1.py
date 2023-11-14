@@ -11,10 +11,12 @@ files as a command-line argument
 #Imports
 import sys
 
+
+
 filename = sys.argv[1]
 
 with open(sys.argv[1]) as filename:
   for line in filename:
-    print(line)
+         print(line)
 
-#Unsure how to do the line numbers
+#Unsure how to do the line thing
