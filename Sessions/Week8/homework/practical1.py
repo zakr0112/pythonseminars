@@ -7,8 +7,14 @@ dry runs or white-box testing).
 Write an implementation of this command. It should take the name of the
 files as a command-line argument
 """
-import os
-import sys
-import argparse, subprocess
 
-print("Test")
+#Imports
+import sys
+
+filename = sys.argv[1]
+
+with open(sys.argv[1]) as filename:
+  for line in filename:
+    print(line)
+
+#Unsure how to do the line numbers
