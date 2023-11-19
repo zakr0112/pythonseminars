@@ -7,3 +7,11 @@ file name. The output should be the lines in the file that contain the string.
 """
 
 print()
+
+grepFileName = sys.argv[1]
+stringInFile = sys.argv[2]
+
+with open(sys.argv[1]) as grepFileName:
+  
+
+
