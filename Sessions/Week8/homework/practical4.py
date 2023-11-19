@@ -11,8 +11,7 @@ print()
 
 import sys
 
-fileName = sys.argv[2]
-
+fileName = sys.argv[1]
 
 with open(sys.argv[1]) as fileName:
   linesCount = 0
