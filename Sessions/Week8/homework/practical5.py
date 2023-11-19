@@ -9,3 +9,5 @@ handle normal files, with punctuation
 """
 
 print()
+
+import sys

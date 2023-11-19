@@ -17,6 +17,7 @@ with open(sys.argv[1]) as grepFileName:
   matchingString = [line.strip() for line in lines if stringInFile in line]
   if matchingString:
     for line in matchingString:
+      print("Lines including: ", stringInFile)
       print(line)
   
 
