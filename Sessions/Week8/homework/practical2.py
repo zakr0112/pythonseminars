@@ -23,6 +23,6 @@ with open(sys.argv[2]) as filename2:
          print(line)
 
 if filename == filename2:
-  print("The file contents are the same")
+  print("The file contents are the same!")
 else:
-  print("The file contents are different")
+  print("The file contents are different!")
