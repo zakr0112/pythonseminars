@@ -11,11 +11,19 @@ print()
 
 import sys
 
-fileName = sys.argv[1]
+fileName = sys.argv[2]
 
 
 with open(sys.argv[1]) as fileName:
   linesCount = 0
   wordsCount = 0
   charactersCount = 0
-  for line in fileN
+  for line in fileName:
+    linesCount += 1
+    charactersCount += len(line)
+    words = line.split()
+    wordsCount += len(words)
+
+print("Lines:", linesCount)
+print("Words:", wordsCount)
+print("Characters", charactersCount)
