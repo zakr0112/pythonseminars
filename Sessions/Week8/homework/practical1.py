@@ -13,10 +13,8 @@ import sys
 
 
 
-filename = sys.argv[1]
+filename = sys.argv[0]
 
 with open(sys.argv[1]) as filename:
   for line in filename:
          print(line)
-
-#Unsure how to do the line thing
