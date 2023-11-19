@@ -15,9 +15,7 @@ fileName = sys.argv[1]
 
 
 with open(sys.argv[1]) as fileName:
-  lines = 0
-  words = 0
-  characters = 0
-  for lines in fileName:
-    lines += 1
-    characters += len(line)
+  linesCount = 0
+  wordsCount = 0
+  charactersCount = 0
+  for line in fileN
