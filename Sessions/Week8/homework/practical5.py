@@ -17,5 +17,6 @@ fileName = sys.argv[1]
 
 with open(sys.argv[1]) as fileName:
   for line in fileName:
-     punctuationNotWords = ''.join(char for char in line if char in string.puncuation)
+     punctuation = ''.join(char for char in line if char in string.punctuation)
+     print(f"None english in '{fileName}':")
   
