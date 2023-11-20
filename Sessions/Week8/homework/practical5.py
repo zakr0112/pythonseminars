@@ -11,10 +11,11 @@ handle normal files, with punctuation
 print()
 
 import sys
+import string
 
 fileName = sys.argv[1]
 
 with open(sys.argv[1]) as fileName:
   for line in fileName:
-     print(line)
+     punctuationNotWords = ''.join(char for char in line if char in string.puncuation)
   
