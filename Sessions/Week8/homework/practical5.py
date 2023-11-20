@@ -11,3 +11,10 @@ handle normal files, with punctuation
 print()
 
 import sys
+
+fileName = sys.argv[1]
+
+with open(sys.argv[1]) as fileName:
+  for line in fileName:
+     print(line)
+  
