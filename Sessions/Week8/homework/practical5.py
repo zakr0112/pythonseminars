@@ -14,9 +14,9 @@ import sys
 import string
 
 fileName = sys.argv[1]
+fullFile = sys.argv[1]
 
 with open(sys.argv[1]) as fileName:
   for line in fileName:
      punctuation = ''.join(char for char in line if char in string.punctuation)
-     print(f"None english in '{fileName}':")
-  
+     print("None English Words:", punctuation)
