@@ -3,11 +3,7 @@ import time
 time.gmtime(0)
 
 #Global
-
-
 basePrice = 12
-
-
 
 def BPP():
   time.sleep(1)
@@ -34,6 +30,7 @@ def startOrder():
     BPP()
   deliveryStart()
 
+
 def deliveryStart():
   global deliveryReq
   global deliveryCost
@@ -53,6 +50,7 @@ def deliveryStart():
   else:
     deliveryStart()
 
+
 def tuesdayDiscount():
   global tuesdayOrNot
   tuesdayOrNot = input("Is it tuesday? (y/n): ")
@@ -63,6 +61,7 @@ def tuesdayDiscount():
   else:
     tuesdayDiscount()
   bppAPP()
+
 
 def bppAPP():
   global bppOrNot
@@ -75,9 +74,9 @@ def bppAPP():
     bppAPP()
   orderCalculation()
 
+
 def orderCalculation():
   subtotal = basePrice * pizzaNumber + deliveryCost
-  
   print()
   print("===================")
   print("Pizza's:", pizzaNumber)
