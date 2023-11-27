@@ -3,9 +3,13 @@ This is the working repository for seminar programming sessions in 'Computer Sci
 
 
 Working Directories:
+Sessions:
 - Week 1 - Week 8
     - Homework
     - Lab Session
+ 
+Assignment:
+- Task1 - Task3
 
  
 
