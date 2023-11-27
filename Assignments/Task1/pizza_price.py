@@ -45,7 +45,8 @@ def deliveryStart():
       print("Delivery Cost:", deliveryCost)
       tuesdayDiscount()
   elif deliveryReq == "n":
-    print("Pickup Cost: 0")
+    print("Delivery Cost: 0")
+    deliveryCost = 0
     tuesdayDiscount()
   else:
     deliveryStart()
