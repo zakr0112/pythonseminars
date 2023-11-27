@@ -82,6 +82,8 @@ def orderCalculation():
   print("===================")
   print("Pizza's:", pizzaNumber)
   print("Delivery Cost:", deliveryCost)
+  discount1 = 0
+  discount2 = 0
     
   if tuesdayOrNot == "y":
     print("Tuesday Discount: 50% (y)")
