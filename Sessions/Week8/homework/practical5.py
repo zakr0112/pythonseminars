@@ -18,5 +18,5 @@ fullFile = sys.argv[1]
 
 with open(sys.argv[1]) as fileName:
   for line in fileName:
-     punctuation = ''.join(char for char in line if char in string.punctuation)
-     print("None English Words:", punctuation)
+    punctuation = ''.join(char for char in line if char in string.punctuation)
+    print("None English Words:", punctuation)
