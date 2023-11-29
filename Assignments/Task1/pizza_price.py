@@ -134,7 +134,27 @@ def orderCalculation():
   print("Total: £", round(fulltotal, 2))
   print("=====================")
   print()
-  quit()
+  print()
+  print()
+  time.sleep(5)
+  orderAgain()
+
+
+def orderAgain():
+  orderNew = input("Start another order? (y/n): ")
+  if orderNew == "y":
+    print()
+    BPP()
+  elif orderNew == "n":
+    print()
+    print("> Program Quit")
+    time.sleep(1)
+    quit()
+  else:
+    print()
+    print("> Please type y/n")
+    print()
+    orderAgain()
 
 
 #start
