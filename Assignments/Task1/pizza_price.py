@@ -24,19 +24,22 @@ def startOrder():
 
     pizzaNumber = int(input("Pizzas: "))
     if pizzaNumber == 0 or pizzaNumber < 1:
-      print("Oops! Please enter a higher number")
+      print("> Oops! Please enter a higher number")
       print()
       time.sleep(1)
       startOrder()
   except ValueError:
-    print("Oops! Please enter a number")
+    print("> Oops! Please enter a number")
     print()
     time.sleep(1)
     startOrder()
+  print()
+  print(">", pizzaNumber, "pizza's added to order")
   deliveryStart()
 
 
 def deliveryStart():
+  print()
   global deliveryReq
   global deliveryCost
   deliveryCost = 2.50
@@ -44,13 +47,19 @@ def deliveryStart():
   if deliveryReq == "y":
     if pizzaNumber >= 5:
       deliveryCost = deliveryCost - 2.50
-      print("Delivery Cost: £", round(deliveryCost, 2))
+      print()
+      print("> Delivery Cost: £", round(deliveryCost, 2))
+      print()
       tuesdayDiscount()
     elif pizzaNumber < 5:
-      print("Delivery Cost: £", round(deliveryCost, 2))
+      print()
+      print("> Delivery Cost: £", round(deliveryCost, 2))
+      print()
       tuesdayDiscount()
   elif deliveryReq == "n":
-    print("Delivery Cost: £0")
+    print()
+    print("> Delivery Cost: £0")
+    print()
     deliveryCost = 0
     tuesdayDiscount()
   else:
@@ -61,9 +70,13 @@ def tuesdayDiscount():
   global tuesdayOrNot
   tuesdayOrNot = input("Tuesday (y/n): ")
   if tuesdayOrNot == "y":
-    print("50% Discount Applied")
+    print()
+    print("> 50% Discount Applied")
+    print()
   elif tuesdayOrNot == "n":
-    print("No Discount Available")
+    print()
+    print("> No Discount Available")
+    print()
   else:
     tuesdayDiscount()
   bppAPP()
@@ -72,10 +85,13 @@ def tuesdayDiscount():
 def bppAPP():
   global bppOrNot
   bppOrNot = input("BPP App (y/n): ")
+  print()
   if bppOrNot == "y":
-    print("25% Discount Applied")
+    print("> 25% Discount Applied")
   elif bppOrNot == "n":
-    print("No Discount Available")
+    print()
+    print("> No Discount Available")
+    print()
   else:
     bppAPP()
   orderCalculation()
@@ -96,6 +112,7 @@ def orderCalculation():
   discount2 = 0
 
   if tuesdayOrNot == "y":
+    print()
     print("Tuesday Discount: 50%")
     discount1 = subtotal / 2
   elif tuesdayOrNot == "n":
