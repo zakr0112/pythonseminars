@@ -1,9 +1,11 @@
 #Imported
 import time
+
 time.gmtime(0)
 
 #Global
 basePrice = 12
+
 
 def BPP():
   time.sleep(1)
@@ -16,7 +18,7 @@ def BPP():
 def startOrder():
   try:
     global pizzaNumber
-    
+
     pizzaNumber = int(input("Pizzas: "))
     if pizzaNumber == 0 or pizzaNumber < 1:
       print("Oops! Please enter a higher number")
@@ -84,7 +86,7 @@ def orderCalculation():
   print("Delivery Cost:", deliveryCost)
   discount1 = 0
   discount2 = 0
-    
+
   if tuesdayOrNot == "y":
     print("Tuesday Discount: 50% (y)")
     discount1 = subtotal / 2
@@ -107,5 +109,11 @@ def orderCalculation():
   print("Total:", fulltotal)
   print()
 
+
 #start
 BPP()
+"""
+Update the following:
+Make it so the prices are rounded to 2DP with float
+Add pound symbol (£), and pence to any totals
+"""
