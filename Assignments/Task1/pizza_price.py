@@ -22,7 +22,7 @@ def startOrder():
   try:
     global pizzaNumber
 
-    pizzaNumber = int(input("Pizzas: "))
+    pizzaNumber = int(input("Pizza(s): "))
     if pizzaNumber == 0 or pizzaNumber < 1:
       print("> Oops! Please enter a higher number")
       print()
@@ -34,7 +34,7 @@ def startOrder():
     time.sleep(1)
     startOrder()
   print()
-  print(">", pizzaNumber, "pizza's added to order")
+  print(">", pizzaNumber, "pizza(s) added to order")
   deliveryStart()
 
 
@@ -106,7 +106,7 @@ def orderCalculation():
   print("     BPP Receipt")
   print()
   print()
-  print("Pizza's:", pizzaNumber)
+  print("Pizza(s):", pizzaNumber)
   print("Delivery Cost: £", deliveryCost)
   discount1 = 0
   discount2 = 0
