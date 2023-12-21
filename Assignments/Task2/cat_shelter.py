@@ -33,15 +33,29 @@ with open(filename) as file:
     if item.startswith("END"):
       break
     totalVisits = totalVisits + 1
-    if item.startswith("OURS"):
+
+    #Split the input string into 3 list sections
+    splitList = item.split(",", 3)
+    #print(splitList)
+    iterator = iter(splitList)
+    if next(iterator) == "OURS":
       myCatVisits = myCatVisits + 1
-    if item.startswith("THEIRS"):
+    else:
       otherCatVisits = otherCatVisits + 1
-    print(item)
+
+    
+    #if item.startswith("OURS"):
+     # myCatVisits = myCatVisits + 1
+    #if item.startswith("THEIRS"):
+      #otherCatVisits = otherCatVisits + 1
+# We now need to split the string to work out the times
+
+
 
 print()
 print("Log File Analysis")
 print("=================")
+print()
 print("Total Visits:", totalVisits)
-print("Our Cat Visits:", myCatVisits)
-print("Other Cat Visits:", otherCatVisits)
+print("Cat Visits:", myCatVisits)
+print("Other Cats:", otherCatVisits)
