@@ -30,10 +30,18 @@ print(fileRead)
 
 with open(filename) as file:
   for item in file:
-    if item != "END":
-      totalVisits = totalVisits + 1
+    if item.startswith("END"):
+      break
+    totalVisits = totalVisits + 1
+    if item.startswith("OURS"):
+      myCatVisits = myCatVisits + 1
+    if item.startswith("THEIRS"):
+      otherCatVisits = otherCatVisits + 1
     print(item)
 
+print()
+print("Log File Analysis")
+print("=================")
 print("Total Visits:", totalVisits)
-
-#print("Log File Analysis")
+print("Our Cat Visits:", myCatVisits)
+print("Other Cat Visits:", otherCatVisits)
