@@ -12,6 +12,8 @@ if filename not in acceptedFiles:
     print("Cannot open that file")
     quit()
 else:
-    print("Log File:", filename)
+    print("Log File:", filename);print()  
+    open(filename, 'r')
 
 print("Log File Analysis")
+
