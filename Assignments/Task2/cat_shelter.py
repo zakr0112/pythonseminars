@@ -19,7 +19,7 @@ totalVisits = 0
 totalTime = 0
 averageVisit = 0
 longestVisit = 0
-shortestVisit = 0
+shortestVisit = 1440 #number of minutes in a day
 
 """
 print("Log File:", filename);print()  
@@ -42,15 +42,26 @@ with open(filename) as file:
       myCatVisits = myCatVisits + 1
     else:
       otherCatVisits = otherCatVisits + 1
-
+    startTime = int(next(iterator))
+    endTime = int(next(iterator))
+    #print(startTime)
+    #print(endTime)
+    # calculate visit time
+    #visit time is end time - start time
+    visitTime = endTime - startTime
+    totalTime = totalTime + visitTime
+    #shortestVisit = visitTime
+    #print(visitTime)
+    if visitTime > longestVisit:
+      longestVisit = visitTime
+    if visitTime <= shortestVisit:
+      shortestVisit = visitTime
     
-    #if item.startswith("OURS"):
-     # myCatVisits = myCatVisits + 1
-    #if item.startswith("THEIRS"):
-      #otherCatVisits = otherCatVisits + 1
+  
 # We now need to split the string to work out the times
 
-
+averageVisit = totalTime / totalVisits
+totHours = totalTime mod(60)
 
 print()
 print("Log File Analysis")
@@ -59,3 +70,9 @@ print()
 print("Total Visits:", totalVisits)
 print("Cat Visits:", myCatVisits)
 print("Other Cats:", otherCatVisits)
+print()
+print("Total time in House:")
+print()
+print("Average Visit Length", averageVisit,"minutes")
+print("Longest Visit:", longestVisit,"minutes")
+print("Shortest Visit:", shortestVisit,"minutes")
