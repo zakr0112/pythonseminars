@@ -4,7 +4,7 @@ import time
 time.gmtime(0)
 
 #Global
-basePrice = 12
+basePrice = 12  #Sets the base price of the pizza outside of the functions
 
 
 def BPP():
@@ -18,7 +18,7 @@ def BPP():
   startOrder()
 
 
-def startOrder():
+def startOrder():  #Starts the ordering process
   try:
     global pizzaNumber
 
@@ -38,10 +38,10 @@ def startOrder():
   deliveryStart()
 
 
-def deliveryStart():
+def deliveryStart():  #This calculates delivery cost based on input
   print()
-  global deliveryReq
-  global deliveryCost
+  global deliveryReq  #Global variable for delivery request
+  global deliveryCost  #Global variable for delivery cost
   deliveryCost = 2.50
   deliveryReq = input("Delivery (y/n): ")
   if deliveryReq == "y":
@@ -66,7 +66,7 @@ def deliveryStart():
     deliveryStart()
 
 
-def tuesdayDiscount():
+def tuesdayDiscount():  #Decides whether a discount will be applied
   global tuesdayOrNot
   tuesdayOrNot = input("Tuesday (y/n): ")
   if tuesdayOrNot == "y":
@@ -82,7 +82,7 @@ def tuesdayDiscount():
   bppAPP()
 
 
-def bppAPP():
+def bppAPP():  #BPP App discount
   global bppOrNot
   bppOrNot = input("BPP App (y/n): ")
   print()
@@ -97,7 +97,7 @@ def bppAPP():
   orderCalculation()
 
 
-def orderCalculation():
+def orderCalculation():  #Starts the total calculation
   time.sleep(1)
   subtotal = basePrice * pizzaNumber + deliveryCost
   print()
@@ -126,7 +126,7 @@ def orderCalculation():
     print("BPP App Discount: 0%")
     discount2 = 0
 
-  fulltotal = subtotal - discount1 - discount2
+  fulltotal = subtotal - discount1 - discount2  #Full receipt calculated
   print()
   print("Subtotal: £", round(subtotal, 2))
   print("Discount 1: £", round(discount1, 2))
@@ -140,7 +140,7 @@ def orderCalculation():
   orderAgain()
 
 
-def orderAgain():
+def orderAgain():  #Start another order or close program
   orderNew = input("Start another order? (y/n): ")
   if orderNew == "y":
     print()
