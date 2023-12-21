@@ -61,7 +61,9 @@ with open(filename) as file:
 # We now need to split the string to work out the times
 
 averageVisit = totalTime / totalVisits
-totHours = totalTime mod(60)
+totalHours, totalMins = divmod (totalTime, 60)
+
+
 
 print()
 print("Log File Analysis")
@@ -71,8 +73,8 @@ print("Total Visits:", totalVisits)
 print("Cat Visits:", myCatVisits)
 print("Other Cats:", otherCatVisits)
 print()
-print("Total time in House:")
+print("Total time in House:", totalHours, "Hours, ", totalMins, "Minutes")
 print()
-print("Average Visit Length", averageVisit,"minutes")
-print("Longest Visit:", longestVisit,"minutes")
-print("Shortest Visit:", shortestVisit,"minutes")
+print("Average Visit:", round(averageVisit), "Minutes")
+print("Longest Visit:", longestVisit, "Minutes")
+print("Shortest Visit:", shortestVisit, "Minutes")
