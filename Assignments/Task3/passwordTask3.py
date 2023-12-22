@@ -1,4 +1,7 @@
-import pwinput
+#  This masks an input with a character (*)
+import pwinput 
+
+
 
 def menu():
   print("1: Add User")
@@ -15,6 +18,9 @@ def menu():
   if menuEntry == "3":
     print()
     changePassword()
+  if menuEntry == "4":
+    print()
+    login()
   
 
 def rot13(password):  #Rotate 13 taken from delphi (pascal) example
@@ -185,6 +191,15 @@ def changePassword():
       print("Password has been changed")
 
 
+def login():
+  userName = getUserName()
+  currentPassword = getUserPassword()
+  if validUser(userName, currentPassword) is False:
+    print("Invalid credentials")
+    login()
+  else:
+    print("Welcome to the system")
+      
 
 #run Program
 menu()
