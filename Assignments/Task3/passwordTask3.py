@@ -25,7 +25,12 @@ def rot13(password):  #Rotate 13 taken from delphi (pascal) example
     Result += chr(ordchar)
   return Result
 
-
+def addToFile(userName, fullName, rotPassword):
+  outputStr = "\n" + userName + ":" + fullName + ":" + rotPassword 
+  outFile = open('passwd.txt', 'a')
+  outFile.write(outputStr)
+  outFile.close()
+  
 
 def findLogin(usernameToFind):
   with open("passwd.txt") as passwordFile:
@@ -73,15 +78,14 @@ def addUser():
     print("Oops! This Login Name is already being used")
     addUser()
   else:
-    print("Login Name Accepted:", userName)
     fullName = getFullName()
-    print("Full Name:", fullName)
     password = getUserPassword()
-    print("Password:", password)
-    #print(rot13(password))
-    #print(rot13(rot13(password)))
+    #rotPassword = rot13(password)
+    addToFile(userName, fullName, rot13(password))
+    print(userName, "added to password file")
 
 
 
-#run
+
+#run Program
 menu()
