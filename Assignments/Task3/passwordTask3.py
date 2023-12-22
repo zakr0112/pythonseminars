@@ -8,6 +8,24 @@ def menu():
     print()
     addUser()
 
+def rot13(password):  #Rotate 13 taken from delphi (pascal) example
+  Result = ""
+  for i in password:
+    ordchar = ord(i)
+    if ordchar >= ord('a') and ordchar <= ord('z'):
+      if ordchar > ord('m'):
+        ordchar -= 13
+      else:
+        ordchar += 13
+    elif ordchar >= ord('A') and ordchar <= ord('Z'):
+      if ordchar > ord('M'):
+        ordchar -= 13
+      else:
+        ordchar += 13
+    Result += chr(ordchar)
+  return Result
+
+
 
 def findLogin(usernameToFind):
   with open("passwd.txt") as passwordFile:
@@ -60,7 +78,8 @@ def addUser():
     print("Full Name:", fullName)
     password = getUserPassword()
     print("Password:", password)
-
+    #print(rot13(password))
+    #print(rot13(rot13(password)))
 
 
 
