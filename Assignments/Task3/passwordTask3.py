@@ -55,6 +55,25 @@ def deleteFromFile(userName):
         outFile.write(users)
     outFile.close()
 
+def changePasswordInFile(userName, password):
+  # To change password, we have to rewrite the entire file with the new password
+  with open('passwd.txt', 'r') as fileData:
+    currentPasswords = fileData.readlines()
+  fileData.close()
+  with open('passwd.txt', 'w') as outFile:
+    outFile.truncate() # Clears existing password file as we have in memory
+    for users in currentPasswords:
+      splitList = users.split(":", 3)
+      iterator = iter(splitList)
+      if next(iterator) == userName:
+        fName = next(iterator)
+        outputStr = userName + ":" + fName + ":" + password
+        outFile.write(outputStr)
+      else:
+        outFile.write(users)
+    outFile.close()
+
+
 def findLogin(usernameToFind):
   with open('passwd.txt', 'r') as passwordFile:
     for users in passwordFile:
@@ -157,13 +176,10 @@ def changePassword():
       changePassword()
     else:
       # Now we change the password in the file
-      deleteFromFile(userName)
+      changePasswordInFile(userName, rot13(passwordChange1))
+      print("Password has been changed")
 
 
-
-"""
-Changes a user's password. The user should enter their username, and their new password. As is customary, for verification, the user should first enter their current password, and then the new password should be entered twice. No password should appear on the screen as it is typed. If the username is not found, the current password is invalid, or the passwords do not match, no change to the file should be made.
-"""
 
 #run Program
 menu()
