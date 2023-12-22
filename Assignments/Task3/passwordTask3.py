@@ -10,6 +10,9 @@ def menu():
   if menuEntry == "2":
     print()
     deleteUser()
+  if menuEntry == "3":
+    print()
+    changePassword()
   
 
 def rot13(password):  #Rotate 13 taken from delphi (pascal) example
@@ -31,8 +34,8 @@ def rot13(password):  #Rotate 13 taken from delphi (pascal) example
 
 def addToFile(userName, fullName, rotPassword):
   outputStr = "\n" + userName + ":" + fullName + ":" + rotPassword 
-  #outFile = open('passwd.txt', 'a')
-  with open('passwd.txt', 'a') as outFile:
+  #outFile = open('passwd.txt', 'a') # Showed warning underscore for 'open'
+  with open('passwd.txt', 'a') as outFile: # Used with as no underline warning
     outFile.write(outputStr)
     outFile.close()
 
@@ -60,6 +63,18 @@ def findLogin(usernameToFind):
       if next(iterator) == usernameToFind:
         return True
   return False
+
+def validUser(usernameToFind, currentPassword):
+  Result = False
+  with open('passwd.txt', 'r') as passwordFile:
+    for users in passwordFile:
+      splitList = users.split(":", 3)
+      iterator = iter(splitList)
+      if next(iterator) == usernameToFind:
+        next(iterator)
+        if next(iterator) == rot13(currentPassword):
+          Result = True
+  return Result
 
 
 def getUserName():
@@ -92,6 +107,19 @@ def getUserPassword():
   else:
     return Result
 
+def getNewPassword(passwordAttempt):
+  if passwordAttempt == 1:
+    Result = input("Enter New Password (q to quit): ")
+  else:
+    Result = input("Re-enter New Password (q to quit): ")
+  if Result == "q":
+    quit()
+  if len(Result) == 0:
+    print("Invalid Password")
+    getNewPassword(passwordAttempt)
+  else:
+    return Result
+
 def addUser():
   userName = getUserName()
   if findLogin(userName) is True:
@@ -113,7 +141,29 @@ def deleteUser():
   else:
     deleteFromFile(userName)
     print(userName, "has been removed from the password file")
-    
+
+
+def changePassword():
+  userName = getUserName()
+  currentPassword = getUserPassword()
+  if validUser(userName, currentPassword) is False:
+    print("Invalid credentials")
+    changePassword()
+  else:
+    passwordChange1 = getNewPassword(1)
+    passwordChange2 = getNewPassword(2)
+    if passwordChange1 != passwordChange2:
+      print("Passwords don't match")
+      changePassword()
+    else:
+      # Now we change the password in the file
+      deleteFromFile(userName)
+
+
+
+"""
+Changes a user's password. The user should enter their username, and their new password. As is customary, for verification, the user should first enter their current password, and then the new password should be entered twice. No password should appear on the screen as it is typed. If the username is not found, the current password is invalid, or the passwords do not match, no change to the file should be made.
+"""
 
 #run Program
 menu()
