@@ -18,49 +18,48 @@ def findLogin(usernameToFind):
         return True
   return False
 
-def getLoginName(loginNameEntry):
-  print("getLoginName")
-  loginNameEntry = input("Enter Login Name (q to quit): ")
-  if loginNameEntry == "q":
-    quit()
-  if len(loginNameEntry) == 0:
-    print("Invalid Login Name")
-    getLoginName("")
-  else:
-    return loginNameEntry
 
-def getFullName(fullNameEntry):
-  fullNameEntry = input("Enter Full Name (q to quit): ")
-  if fullNameEntry == "q":
+def getUserName():
+  Result = input("Enter Username (q to quit): ")
+  if Result == "q":
     quit()
-  if len(fullNameEntry) == 0:
+  if len(Result) == 0:
+    print("Invalid User Name")
+    getUserName()
+  else:
+    return Result
+
+def getFullName():
+  Result = input("Enter Full Name (q to quit): ")
+  if Result == "q":
+    quit()
+  if len(Result) == 0:
     print("Invalid Full Name")
-    getFullName("")
+    getFullName()
   else:
-    return fullNameEntry
+    return Result
 
-def getUserPassword(passwordEntry):
-  passwordEntry = input("Enter Password (q to quit): ")
-  if passwordEntry == "q":
+def getUserPassword():
+  Result = input("Enter Password (q to quit): ")
+  if Result == "q":
     quit()
-  if len(passwordEntry) == 0:
+  if len(Result) == 0:
     print("Invalid Password")
-    getUserPassword("")
+    getUserPassword()
   else:
-    return passwordEntry
+    return Result
 
 def addUser():
-  print("addUser")
-  loginNameEntry = getLoginName("")
-  if findLogin(loginNameEntry) is True:
+  userName = getUserName()
+  if findLogin(userName) is True:
     print("Oops! This Login Name is already being used")
     addUser()
   else:
-    print("Login Name Accepted:", loginNameEntry)
-    fullNameEntry = getFullName("")
-    print("Full Name:", fullNameEntry)
-    passwordEntry = getUserPassword("")
-    print("Password:", passwordEntry)
+    print("Login Name Accepted:", userName)
+    fullName = getFullName()
+    print("Full Name:", fullName)
+    password = getUserPassword()
+    print("Password:", password)
 
 
 
