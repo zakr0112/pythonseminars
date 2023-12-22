@@ -7,6 +7,10 @@ def menu():
   if menuEntry == "1":
     print()
     addUser()
+  if menuEntry == "2":
+    print()
+    deleteUser()
+  
 
 def rot13(password):  #Rotate 13 taken from delphi (pascal) example
   Result = ""
@@ -27,13 +31,29 @@ def rot13(password):  #Rotate 13 taken from delphi (pascal) example
 
 def addToFile(userName, fullName, rotPassword):
   outputStr = "\n" + userName + ":" + fullName + ":" + rotPassword 
-  outFile = open('passwd.txt', 'a')
-  outFile.write(outputStr)
-  outFile.close()
-  
+  #outFile = open('passwd.txt', 'a')
+  with open('passwd.txt', 'a') as outFile:
+    outFile.write(outputStr)
+    outFile.close()
+
+def deleteFromFile(userName):
+  # To delete an entry, we have to rewrite the entire file without the entry
+  with open('passwd.txt', 'r') as fileData:
+    currentPasswords = fileData.readlines()
+  fileData.close()
+  # Read all the file data entries in, and now we have to write them line by line 
+  with open('passwd.txt', 'w') as outFile:
+    outFile.truncate() # Clears existing password file as we have in memory
+    for users in currentPasswords:
+      # If the username matches, we don't want to write it back out
+      splitList = users.split(":", 3)
+      iterator = iter(splitList)
+      if next(iterator) != userName:
+        outFile.write(users)
+    outFile.close()
 
 def findLogin(usernameToFind):
-  with open("passwd.txt") as passwordFile:
+  with open('passwd.txt', 'r') as passwordFile:
     for users in passwordFile:
       splitList = users.split(":", 3)
       iterator = iter(splitList)
@@ -75,17 +95,25 @@ def getUserPassword():
 def addUser():
   userName = getUserName()
   if findLogin(userName) is True:
-    print("Oops! This Login Name is already being used")
+    print("Oops! This User Name is already being used")
     addUser()
   else:
     fullName = getFullName()
     password = getUserPassword()
     #rotPassword = rot13(password)
     addToFile(userName, fullName, rot13(password))
-    print(userName, "added to password file")
+    print(userName, "added to the password file")
 
 
-
+def deleteUser():
+  userName = getUserName()
+  if findLogin(userName) is False:
+    print("Oops! This User Name doesn't exist, no changes have been made")
+    deleteUser()
+  else:
+    deleteFromFile(userName)
+    print(userName, "has been removed from the password file")
+    
 
 #run Program
 menu()
