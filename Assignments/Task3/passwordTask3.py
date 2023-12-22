@@ -4,10 +4,15 @@ import pwinput
 
 
 def menu():
+  print("==================")
+  print("=     Options    =")
+  print("==================")
   print("1: Add User")
   print("2: Delete User")
   print("3: Change Password")
   print("4: Login")
+  print("q: quit")
+  print("==================")
   menuEntry = input("Enter option: ")
   if menuEntry == "1":
     print()
@@ -21,6 +26,9 @@ def menu():
   if menuEntry == "4":
     print()
     login()
+  if menuEntry == "q":
+    quit()
+  menu()
   
 
 def rot13(password):  #Rotate 13 taken from delphi (pascal) example
@@ -104,8 +112,8 @@ def validUser(usernameToFind, currentPassword):
   return Result
 
 
-def getUserName():
-  Result = input("Enter Username (q to quit): ")
+def getUserName(msgtext ="Enter Username (q to quit): "):
+  Result = input(msgtext)
   if Result == "q":
     quit()
   if len(Result) == 0:
@@ -126,7 +134,7 @@ def getFullName():
 
 def getUserPassword():
   Result = pwinput.pwinput(prompt ="Enter Password (q to quit): ", mask="*")
-  #Result = input("Enter Password (q to quit): ")
+
   if Result == "q":
     quit()
   if len(Result) == 0:
@@ -135,13 +143,13 @@ def getUserPassword():
   else:
     return Result
 
-def getNewPassword(passwordAttempt):
+def getNewPassword(passwordAttempt = 1):
   if passwordAttempt == 1:
     Result = pwinput.pwinput(prompt ="Enter New Password (q to quit): ", mask="*")
-    #Result = input("Enter New Password (q to quit): ")
+
   else:
     Result = pwinput.pwinput(prompt ="Re-enter New Password (q to quit): ", mask="*")
-    #esult = input("Re-enter New Password (q to quit): ")
+
   if Result == "q":
     quit()
   if len(Result) == 0:
@@ -155,22 +163,27 @@ def addUser():
   if findLogin(userName) is True:
     print("Oops! This User Name is already being used")
     addUser()
-  else:
-    fullName = getFullName()
-    password = getUserPassword()
-    #rotPassword = rot13(password)
-    addToFile(userName, fullName, rot13(password))
-    print(userName, "added to the password file")
+    
+  #  To get here the user must have entered a new username
+  fullName = getFullName()
+  password = getUserPassword()
+  addToFile(userName, fullName, rot13(password))
+  print(userName, "added to the password file")
 
 
 def deleteUser():
-  userName = getUserName()
+  userName = getUserName("Enter Username To Delete (q to quit): ")
   if findLogin(userName) is False:
-    print("Oops! This User Name doesn't exist, no changes have been made")
+    print("\nOops! This User Name doesn't exist, no changes have been made\n")
     deleteUser()
-  else:
+    
+  #  To get here the user must have entered a valid username
+  confirmDelete = input("Are you sure you want to delete this user? (Y/N) ")
+  if confirmDelete == "Y" or confirmDelete == "y":
     deleteFromFile(userName)
-    print(userName, "has been removed from the password file")
+    print("\n", userName, "has been removed from the password file\n")
+  else:
+    print("\nNo changes have been made\n")
 
 
 def changePassword():
@@ -179,16 +192,16 @@ def changePassword():
   if validUser(userName, currentPassword) is False:
     print("Invalid credentials")
     changePassword()
-  else:
-    passwordChange1 = getNewPassword(1)
-    passwordChange2 = getNewPassword(2)
-    if passwordChange1 != passwordChange2:
-      print("Passwords don't match")
-      changePassword()
-    else:
-      # Now we change the password in the file
-      changePasswordInFile(userName, rot13(passwordChange1))
-      print("Password has been changed")
+    
+  passwordChange1 = getNewPassword()
+  passwordChange2 = getNewPassword(2)
+  if passwordChange1 != passwordChange2:
+    print("Passwords don't match")
+    changePassword()
+    
+  # Now we change the password in the file
+  changePasswordInFile(userName, rot13(passwordChange1))
+  print("Password has been changed")
 
 
 def login():
