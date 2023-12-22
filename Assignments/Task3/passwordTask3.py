@@ -1,3 +1,5 @@
+import pwinput
+
 def menu():
   print("1: Add User")
   print("2: Delete User")
@@ -117,7 +119,8 @@ def getFullName():
     return Result
 
 def getUserPassword():
-  Result = input("Enter Password (q to quit): ")
+  Result = pwinput.pwinput(prompt ="Enter Password (q to quit): ", mask="*")
+  #Result = input("Enter Password (q to quit): ")
   if Result == "q":
     quit()
   if len(Result) == 0:
@@ -128,9 +131,11 @@ def getUserPassword():
 
 def getNewPassword(passwordAttempt):
   if passwordAttempt == 1:
-    Result = input("Enter New Password (q to quit): ")
+    Result = pwinput.pwinput(prompt ="Enter New Password (q to quit): ", mask="*")
+    #Result = input("Enter New Password (q to quit): ")
   else:
-    Result = input("Re-enter New Password (q to quit): ")
+    Result = pwinput.pwinput(prompt ="Re-enter New Password (q to quit): ", mask="*")
+    #esult = input("Re-enter New Password (q to quit): ")
   if Result == "q":
     quit()
   if len(Result) == 0:
